@@ -4,6 +4,7 @@ import fullStack from '../../assets/fullstack.jpg';
 import UIUX from '../../assets/uiux.jpg';
 import Graphic from '../../assets/graphic.jpg';
 import Data from '../../assets/data.jpg';
+import Apps from '../../assets/apps.jpg';
 
 
 const qualifications = [
@@ -11,6 +12,12 @@ const qualifications = [
     title: "Full-Stack Development",
     description: "Building robust and scalable web applications",
     image: fullStack,
+  },
+  {
+    title: "Mobile Application Development",
+    description: "Designing and building intuitive mobile applications",
+    image: Apps,
+
   },
   {
     title: "UI/UX Design",
@@ -50,7 +57,7 @@ export const About = () => {
   return (
     
     <div id="about" className="relative w-full h-screen overflow-hidden">
-        <div className="relative w-full h-150 overflow-hidden">
+        <div className="relative w-full mt-16 h-[70vh] overflow-hidden rounded-xl">
       {/* Slides */}
       <AnimatePresence>
         {qualifications.map(
@@ -65,7 +72,7 @@ export const About = () => {
                 className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-cover bg-center"
                 style={{ backgroundImage: `url(${qual.image})` }}
               >
-                <div className="bg-[rgba(10,10,10,0.8)] p-8 rounded-xl text-center text-white max-w-full mx-4">
+                <div className="bg-[rgba(10,10,10,0.6)] p-8 text-center text-white w-full">
                   <h2 className="text-5xl md:text-6xl font-bold mb-4">{qual.title}</h2>
                   <p className="text-lg md:text-xl">{qual.description}</p>
                 </div>
@@ -77,13 +84,13 @@ export const About = () => {
       {/* Side Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-5 top-1/2 transform -translate-y-1/2 bg-[rgba(10,10,10,0.1)]  hover:bg-[rgba(10,10,10,0.7)] text-white p-3 rounded-xl shadow-lg transition"
+        className="absolute left-5 top-1/2 transform -translate-y-1/2 hover:bg-[rgba(10,10,10,0.8)] text-white p-3 rounded-lg shadow-lg transition"
       >
         &#10094; {/* Left arrow */}
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-[rgba(10,10,10,0.1)] hover:bg-[rgba(10,10,10,0.7)] text-white p-3 rounded-xl shadow-lg transition"
+        className="absolute right-5 top-1/2 transform -translate-y-1/2 hover:bg-[rgba(10,10,10,0.7)] text-white p-3 rounded-lg shadow-lg transition"
       >
         &#10095; 
       </button>
